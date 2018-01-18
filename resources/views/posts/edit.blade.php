@@ -10,7 +10,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Edit post</div>
                     <div class="panel-body">
-                        {!! Form::model($post, ['route' => ['posts.update', $post->id ]]) !!}
+                        {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
                         <div class="col-md-8">
                             {{Form::label('title', 'Title')}}
                             {{Form::text('title', null, ['class' => 'form-control'] )}}
@@ -33,7 +33,7 @@
                                         {!! Html::linkRoute('posts.show', 'Cancel', [$post->id],['class' => 'btn btn-danger btn-block']) !!}
                                     </div>
                                     <div class="col-sm-6">
-                                        {!! Html::linkRoute('posts.destroy', 'Save', [$post->id],['class' => 'btn btn-success btn-block']) !!}
+                                        {{ Form::submit('Save', ['class' => 'btn btn-success btn-block']) }}
                                     </div>
                                 </div>
                             </div>
