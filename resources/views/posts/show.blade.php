@@ -30,11 +30,8 @@
                                        {!! Html::linkRoute('posts.edit', 'Edit', [$post->id],['class' => 'btn btn-primary btn-block']) !!}
                                     </div>
                                     <div class="col-sm-6">
-                                        {!! Html::linkRoute('posts.destroy', 'Delete', [$post->id],['class' => 'btn btn-danger btn-block']) !!}
+                                        {{ Form::submit('Save', ['class' => 'btn btn-success btn-block']) }}
                                     </div>
-
-
-
                             </div>
                         </div>
                     </div>
