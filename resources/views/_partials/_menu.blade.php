@@ -19,8 +19,6 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li class="{{ Request::is('home') ? "active" : "" }}"><a href="home">Home</a></li>
-                <li class="{{ Request::is('posts') ? "active" : "" }}"><a href="posts">Posts</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

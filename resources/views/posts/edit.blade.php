@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', ' | View Post')
+@section('title', ' | Edit Post')
 
 @section('content')
 
@@ -8,11 +8,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Show post</div>
+                    <div class="panel-heading">Edit post</div>
                     <div class="panel-body">
+                        {!! Form::model($post, ['route' => ['posts.update', $post->id ]]) !!}
                         <div class="col-md-8">
-                            <h1> {{ $post->title }}</h1>
-                            <p class="lead"> {{ $post->body }} </p>
+                            {{Form::label('title', 'Title')}}
+                            {{Form::text('title', null, ['class' => 'form-control'] )}}
+                            {{Form::label('body', 'Body')}}
+                            {{Form::textarea('body', null, ['class' => 'form-control'] )}}
                         </div>
                         <div class="col-md-4">
                             <div class="well">
@@ -27,20 +30,19 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                       {!! Html::linkRoute('posts.edit', 'Edit', [$post->id],['class' => 'btn btn-primary btn-block']) !!}
+                                        {!! Html::linkRoute('posts.show', 'Cancel', [$post->id],['class' => 'btn btn-danger btn-block']) !!}
                                     </div>
                                     <div class="col-sm-6">
-                                        {!! Html::linkRoute('posts.destroy', 'Delete', [$post->id],['class' => 'btn btn-danger btn-block']) !!}
+                                        {!! Html::linkRoute('posts.destroy', 'Save', [$post->id],['class' => 'btn btn-success btn-block']) !!}
                                     </div>
-
-
-
+                                </div>
                             </div>
                         </div>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!--End of row-->
     </div>
 
 @endsection
