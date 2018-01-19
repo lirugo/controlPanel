@@ -34,10 +34,12 @@
                                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!}
                                         {!! Form::close()!!}
                                     </div>
-
-
-
-                            </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        {!! Html::linkRoute('posts.index', 'Back', [],['class' => 'btn btn-default btn-block top-space']) !!}
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
