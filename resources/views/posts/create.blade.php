@@ -18,7 +18,8 @@
                             {{ Form::label('body','Post body:') }}
                             {{ Form::textarea('body',null, ['class' => 'form-control']) }}
 
-                            {{ Form::submit('Create', ['class' => 'btn btn-success']) }}
+                             {!! Html::linkRoute('posts.index', 'Cancel',[] ,['class' => 'btn btn-danger top-space']) !!}
+                            {{ Form::submit('Create', ['class' => 'btn btn-success top-space']) }}
                         {!! Form::close() !!}
 
                     </div>
