@@ -34,11 +34,20 @@
                                         <td>{{ substr($post->title, 0, 30 ) }}{{strlen($post->title) > 30 ? "..." : "" }}</td>
                                         <td>{{ substr($post->body, 0, 50 ) }}{{ strlen($post->body) > 50 ? "..." : "" }}</td>
                                         <td>{{ date('j.m.y G:i', strtotime($post->updated_at)) }}</td>
-                                        <td><a href="{{ route('posts.show', $post->id) }}" class="btn btn-default btn-sm">View</a> <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-default btn-sm">Edit</a></td>
+                                        <td>
+                                            {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE'])!!}
+                                            <a href="{{ route('posts.show', $post->id) }}" class="btn btn-default btn-sm">View</a>
+                                            <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-success btn-sm">Edit</a>
+                                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
+                                            {!! Form::close()!!}
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
+                            <div class="text-center">
+                                {!!  $posts->links();!!}
+                            </div>
                         </div>
                     </div>
                 </div>

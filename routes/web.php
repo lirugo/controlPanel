@@ -25,3 +25,4 @@ Route::post('/changePassword','Auth\ChangePasswordController@changePassword')->n
 
 Route::resource('posts','PostController');
 
+

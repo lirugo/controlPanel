@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         // Create variable and store all the blog posts in the from database
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'desc')->paginate(10);
 
         // Return the from and pass in the above  variable
         return view('posts.index')->withPosts($posts);
